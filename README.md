@@ -48,8 +48,8 @@ To run this project locally on your machine, follow these steps:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Kabirgit18/Portfolio.git
-cd Portfolio
+git clone https://github.com/Kabirpatel4518/portfolio.git
+cd portfolio
 ```
 
 ### 2. Backend Setup
@@ -116,4 +116,4 @@ _(You can change these credentials directly from the Admin Panel's profile setti
 ⭐ **Star the repo if you like it!**
 
 **Designed & Developed by Kabir Patel**
-GitHub - https://github.com/Kabirgit18
+GitHub - https://github.com/Kabirpatel4518
