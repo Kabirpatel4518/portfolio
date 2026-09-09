@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = ({ data }) => {
   return (
     <footer className="bg-navy py-12 border-t-0 mt-0 w-full">
       <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 border-b border-slate-800 pb-12 mb-8 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 border-b border-slate-800 pb-12 mb-8 text-center md:text-left">
           {/* Column 1: Profile & Contact */}
           <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
               {data?.about?.profileImage && (
                 <img
                   src={data.about.profileImage}
@@ -16,14 +17,17 @@ const Footer = ({ data }) => {
                 />
               )}
               <div className="flex items-center gap-2">
-                <div className="w-5 h-5 rounded-sm bg-primary flex items-center justify-center -rotate-12">
-                  <div className="w-2.5 h-2.5 bg-white"></div>
-                </div>
                 <span className="text-xl font-bold text-white tracking-widest uppercase">
                   {data?.about?.name || "PORTFOLIO"}
                 </span>
               </div>
             </div>
+
+            {data?.about?.objective && (
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
+                {data.about.objective}
+              </p>
+            )}
 
             <h4 className="text-white font-bold mb-3">Get in Touch</h4>
             <a
@@ -32,20 +36,39 @@ const Footer = ({ data }) => {
             >
               kabirpatel2882004@gmail.com
             </a>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              At & Po Katwad Himmtangar
-              <br />
-              Sabarkhatha S.K <br />
-              +91 9328008309
-            </p>
           </div>
 
-          {/* Column 2: Hobbies */}
+          {/* Column 2: Quick Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-white font-bold mb-6 text-lg">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { name: "Home", href: "/" },
+                { name: "About", href: "/about" },
+                { name: "Skills", href: "/skills" },
+                { name: "Projects", href: "/projects" },
+                { name: "Experience", href: "/experience" },
+                { name: "Contact", href: "/contact" },
+              ].map((link, idx) => (
+                <li key={idx} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>
+                  <Link
+                    to={link.href}
+                    className="text-slate-400 text-sm hover:text-primary transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Hobbies */}
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-bold mb-6 text-lg">
               Hobbies & Interests
             </h4>
-            {data?.about?.hobbies && data.about.hobbies.length > 0 ? (
+            {data?.about?.hobbies && data.about.hobbies.length > 0 && (
               <ul className="space-y-3">
                 {data.about.hobbies.map((hobby, index) => (
                   <li
@@ -56,17 +79,6 @@ const Footer = ({ data }) => {
                     {hobby}
                   </li>
                 ))}
-              </ul>
-            ) : (
-              <ul className="space-y-3 text-slate-400 text-sm">
-                <li className="flex items-center gap-2 justify-center md:justify-start">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>{" "}
-                  Cricket
-                </li>
-                <li className="flex items-center gap-2 justify-center md:justify-start">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>{" "}
-                  Listening Music
-                </li>
               </ul>
             )}
           </div>

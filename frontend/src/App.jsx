@@ -125,7 +125,7 @@ function App() {
                 <Experience experience={data?.experience} data={data?.about} />
               }
             />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact data={data?.about} />} />
           </Route>
 
           <Route path="/admin" element={<AdminLogin />} />

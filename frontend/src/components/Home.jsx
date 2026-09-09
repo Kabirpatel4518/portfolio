@@ -14,7 +14,7 @@ const Home = ({ data }) => {
       <Skills skills={data?.skills} />
       <Projects projects={data?.projects} />
       <Experience experience={data?.experience} data={data?.about} />
-      <Contact />
+      <Contact data={data?.about} />
     </>
   );
 };
