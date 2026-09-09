@@ -18,25 +18,27 @@ const Skills = ({ skills }) => {
       : skills?.filter((skill) => skill.category === activeTab);
 
   return (
-    <section id="skills" className="relative z-10 bg-[#fdfdfd]">
-      <div className="section-content">
+    <section id="skills" className="relative z-10 bg-slate-50 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+      <div className="section-content relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-              What Services you will <br /> Get from me!
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+              <span className="text-primary italic font-display">Skills</span>
             </h2>
+            <div className="w-16 h-[4px] bg-primary mx-auto rounded-full"></div>
 
-            <div className="flex flex-wrap gap-4 mt-6 md:mt-0">
+            <div className="flex flex-wrap justify-center gap-4 mt-6 md:mt-8">
               {categories.map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`text-sm font-bold uppercase tracking-wider pb-1 border-b-2 transition-colors ${activeTab === tab ? "border-primary text-primary" : "border-transparent text-slate-500 hover:text-slate-900"}`}
+                  className={`px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab ? "bg-primary text-white shadow-md shadow-primary/30" : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:shadow-sm"}`}
                 >
                   {tab}
                 </button>

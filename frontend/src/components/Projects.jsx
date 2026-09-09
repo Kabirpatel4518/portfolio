@@ -5,19 +5,20 @@ import { getDeviconClass } from "../utils/iconHelper";
 
 const Projects = ({ projects }) => {
   return (
-    <section id="projects" className="relative z-10 bg-[#f4f4f5]">
-      <div className="section-content">
+    <section id="projects" className="relative z-10 bg-white overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(circle at 100% 50%, transparent 20%, #000 21%, #000 34%, transparent 35%, transparent), radial-gradient(circle at 0% 50%, transparent 20%, #000 21%, #000 34%, transparent 35%, transparent)', backgroundSize: '60px 60px' }}></div>
+      <div className="section-content relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-              Portfolio <br />{" "}
-              <span className="text-primary italic font-display">My Work</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+              <span className="text-primary italic font-display">Projects</span>
             </h2>
+            <div className="w-16 h-[4px] bg-primary mx-auto rounded-full"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

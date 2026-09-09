@@ -51,8 +51,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative z-10 bg-[#fdfdfd]">
-      <div className="section-content">
+    <section id="contact" className="relative z-10 bg-white overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000, #000 2px, transparent 2px, transparent 12px)' }}></div>
+      <div className="section-content relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,32 +61,17 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="max-w-5xl mx-auto"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+              <span className="text-primary italic font-display">Contact</span>
+            </h2>
+            <div className="w-16 h-[4px] bg-primary mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Text */}
             <div>
-              <div className="inline-flex items-center space-x-2 text-primary font-bold uppercase tracking-widest text-xs mb-4">
-                <span className="w-8 h-[2px] bg-primary"></span>
-                <span>Contact</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 leading-tight">
-                Get In Touch
-              </h2>
-
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <MapPin size={24} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-1">
-                      Address
-                    </h4>
-                    <p className="text-slate-600">
-                      At & Po Katwad Himmtangar Sabarkhatha S.K
-                    </p>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                     <Phone size={24} />

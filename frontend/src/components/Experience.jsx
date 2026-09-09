@@ -4,8 +4,9 @@ import { Briefcase } from 'lucide-react';
 
 const Experience = ({ experience }) => {
   return (
-    <section id="experience" className="relative z-10 bg-white">
-      <div className="section-content">
+    <section id="experience" className="relative z-10 bg-slate-50 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px)' }}></div>
+      <div className="section-content relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -13,9 +14,10 @@ const Experience = ({ experience }) => {
         transition={{ duration: 0.6 }}
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">
-            Some of my <br /> <span className="text-primary italic font-display">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+            <span className="text-primary italic font-display">Experience</span>
           </h2>
+          <div className="w-16 h-[4px] bg-primary mx-auto rounded-full"></div>
         </div>
 
         <div className="relative border-l-2 border-slate-200 ml-4 md:ml-1/2 max-w-4xl mx-auto space-y-12 pb-8">
