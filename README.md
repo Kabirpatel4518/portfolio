@@ -6,9 +6,8 @@ A modern, dynamic, and fully responsive personal portfolio built with the **MERN
 
 ## 🌐 Live Demo
 
-_(Add your live URL here once deployed)_
-Frontend: `https://portfolio-kabir3.vercel.app/`
-Backend: `https://your-backend-url.onrender.com/`
+Frontend: [https://portfolio-kabir-28.vercel.app/](https://portfolio-kabir-28.vercel.app/)  
+Backend: [https://kabir-backend.vercel.app/](https://kabir-backend.vercel.app/)
 
 ---
 
