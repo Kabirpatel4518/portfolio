@@ -11,6 +11,7 @@ const About = lazy(() => import("./components/About"));
 const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
 const Experience = lazy(() => import("./components/Experience"));
+const Education = lazy(() => import("./components/Education"));
 const Contact = lazy(() => import("./components/Contact"));
 const AdminLogin = lazy(() => import("./components/admin/AdminLogin"));
 const AdminDashboard = lazy(() => import("./components/admin/AdminDashboard"));
@@ -124,6 +125,10 @@ function App() {
               element={
                 <Experience experience={data?.experience} data={data?.about} />
               }
+            />
+            <Route
+              path="/education"
+              element={<Education education={data?.education} />}
             />
             <Route path="/contact" element={<Contact data={data?.about} />} />
           </Route>

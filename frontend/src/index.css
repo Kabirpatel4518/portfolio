@@ -52,7 +52,7 @@
   }
   
   .section-content {
-    @apply py-24 px-6 md:px-12 max-w-7xl mx-auto w-full;
+    @apply py-4 md:py-6 px-6 md:px-12 max-w-7xl mx-auto w-full;
   }
 }
 

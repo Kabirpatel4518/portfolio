@@ -4,6 +4,8 @@ import AboutManager from "./AboutManager";
 import ProjectsManager from "./ProjectsManager";
 import SkillsManager from "./SkillsManager";
 import ExperienceManager from "./ExperienceManager";
+import EducationManager from "./EducationManager";
+import SocialManager from "./SocialManager";
 import ContactManager from "./ContactManager";
 import ProfileManager from "./ProfileManager";
 import {
@@ -13,15 +15,23 @@ import {
   FolderKanban,
   Wrench,
   Briefcase,
+  GraduationCap,
+  Link as LinkIcon,
   Mail,
   Bell,
   ChevronDown,
 } from "lucide-react";
 
 const AdminDashboard = () => {
-  const [activeTab, setActiveTab] = useState("about");
+  const [activeTab, setActiveTab] = useState(() => {
+    return localStorage.getItem("adminActiveTab") || "about";
+  });
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.setItem("adminActiveTab", activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
@@ -45,6 +55,10 @@ const AdminDashboard = () => {
         return <SkillsManager />;
       case "experience":
         return <ExperienceManager />;
+      case "education":
+        return <EducationManager />;
+      case "socials":
+        return <SocialManager />;
       case "contacts":
         return <ContactManager />;
       case "profile":
@@ -59,6 +73,8 @@ const AdminDashboard = () => {
     { id: "projects", label: "Projects", icon: <FolderKanban size={20} /> },
     { id: "skills", label: "Skills", icon: <Wrench size={20} /> },
     { id: "experience", label: "Experience", icon: <Briefcase size={20} /> },
+    { id: "education", label: "Education", icon: <GraduationCap size={20} /> },
+    { id: "socials", label: "Social Links", icon: <LinkIcon size={20} /> },
     { id: "contacts", label: "Inbox", icon: <Mail size={20} /> },
   ];
 
