@@ -87,30 +87,21 @@ const Footer = ({ data }) => {
           <div className="flex flex-col items-center md:items-start">
             <h4 className="text-white font-bold mb-6 text-lg">Social Links</h4>
             <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all"
-              >
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all"
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all"
-              >
-                <i className="fas fa-globe"></i>
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
+              {data?.socials && data.socials.length > 0 ? (
+                data.socials.map((social) => (
+                  <a
+                    key={social._id}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400 hover:text-white hover:bg-primary transition-all"
+                  >
+                    <i className={social.icon}></i>
+                  </a>
+                ))
+              ) : (
+                <span className="text-slate-500 text-sm">No social links</span>
+              )}
             </div>
           </div>
         </div>

@@ -138,7 +138,6 @@ const Contact = ({ data }) => {
                     onChange={handleChange}
                     placeholder="Your Name"
                     className="w-full bg-transparent border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all placeholder:text-slate-400"
-                    required
                   />
                 </div>
 
@@ -150,7 +149,6 @@ const Contact = ({ data }) => {
                     onChange={handleChange}
                     placeholder="Email Address"
                     className="w-full bg-transparent border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all placeholder:text-slate-400"
-                    required
                   />
                 </div>
 
@@ -162,7 +160,6 @@ const Contact = ({ data }) => {
                     placeholder="Your Message"
                     rows="4"
                     className="w-full bg-transparent border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all resize-none placeholder:text-slate-400"
-                    required
                   ></textarea>
                 </div>
 

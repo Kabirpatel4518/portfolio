@@ -8,6 +8,8 @@ const About = require("../models/About");
 const Project = require("../models/Project");
 const Skill = require("../models/Skill");
 const Experience = require("../models/Experience");
+const Education = require("../models/Education");
+const Social = require("../models/Social");
 const Contact = require("../models/Contact");
 
 const router = express.Router();
@@ -54,6 +56,8 @@ router.get("/data", async (req, res) => {
     const projects = await Project.find();
     const skills = await Skill.find();
     const experience = await Experience.find();
+    const education = await Education.find();
+    const socials = await Social.find();
 
     res.json({
       about: about || {},
@@ -61,6 +65,8 @@ router.get("/data", async (req, res) => {
       projects: projects || [],
       skills: skills || [],
       experience: experience || [],
+      education: education || [],
+      socials: socials || [],
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -135,6 +141,23 @@ router.delete("/experience/:id", protect, async (req, res) => {
   res.json({ success: true });
 });
 
+// EDUCATION
+router.get("/education", protect, async (req, res) =>
+  res.json(await Education.find()),
+);
+router.post("/education", protect, async (req, res) =>
+  res.json(await Education.create(req.body)),
+);
+router.put("/education/:id", protect, async (req, res) =>
+  res.json(
+    await Education.findByIdAndUpdate(req.params.id, req.body, { new: true }),
+  ),
+);
+router.delete("/education/:id", protect, async (req, res) => {
+  await Education.findByIdAndDelete(req.params.id);
+  res.json({ success: true });
+});
+
 // CONTACTS
 router.get("/contacts", protect, async (req, res) =>
   res.json(await Contact.find().sort({ createdAt: -1 })),
@@ -150,6 +173,23 @@ router.put("/contacts/:id", protect, async (req, res) =>
 );
 router.delete("/contacts/:id", protect, async (req, res) => {
   await Contact.findByIdAndDelete(req.params.id);
+  res.json({ success: true });
+});
+
+// SOCIALS
+router.get("/socials", protect, async (req, res) =>
+  res.json(await Social.find()),
+);
+router.post("/socials", protect, async (req, res) =>
+  res.json(await Social.create(req.body)),
+);
+router.put("/socials/:id", protect, async (req, res) =>
+  res.json(
+    await Social.findByIdAndUpdate(req.params.id, req.body, { new: true }),
+  ),
+);
+router.delete("/socials/:id", protect, async (req, res) => {
+  await Social.findByIdAndDelete(req.params.id);
   res.json({ success: true });
 });
 
