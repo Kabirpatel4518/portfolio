@@ -1,6 +1,6 @@
 // Change this to 'true' when you want to use the live server,
 // and 'false' when you are testing locally on your computer.
-export const isLive = false;
+export const isLive = true;
 
 // Set your live backend URL here (e.g., https://api.yourdomain.com)
 const LIVE_URL = "https://kabir-backend.vercel.app";
