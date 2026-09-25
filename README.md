@@ -97,7 +97,7 @@ _(The frontend will run on `http://localhost:5173`)_
 
 Upon the first run, the backend will automatically generate a default admin account in MongoDB:
 
-- **Username:** ``
+- **Username:** `` 
 - **Password:** ``
 
 _(You can change these credentials directly from the Admin Panel's profile settings)._
